@@ -15,7 +15,7 @@ botocore==1.34.131
 Brotli==1.1.0
 build==1.2.1
 cachetools==5.3.3
-certifi==2024.6.2
+certifi==2024.7.4
 cffi==1.16.0
 charset-normalizer==3.3.2
 chroma-hnswlib==0.7.3
@@ -87,7 +87,7 @@ kubernetes==30.1.0
 lancedb==0.5.7
 langchain==0.1.20
 langchain-cohere==0.1.5
-langchain-community==0.0.38
+langchain-community==0.2.5
 langchain-core==0.1.52
 langchain-openai==0.1.7
 langchain-text-splitters==0.0.2
@@ -206,5 +206,5 @@ wrapt==1.16.0
 wsproto==1.2.0
 yarl==1.9.4
 youtube-transcript-api==0.6.2
-yt-dlp==2023.12.30
+yt-dlp==2024.7.7
 zipp==3.19.2
