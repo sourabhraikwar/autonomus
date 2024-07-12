@@ -5,6 +5,7 @@ A brief description of what the project is about.
 ## Table of Contents
 
 - [About the Project](#about-the-project)
+- [Project Structure](#project-structure)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -15,6 +16,23 @@ A brief description of what the project is about.
 ## About the Project
 
 Provide an overview of what the project is about, its purpose, and what problem it solves. You can also include a screenshot or a demo gif of the project here.
+
+## Project Structure
+
+```
+.
+├── main.py
+├── README.md
+├── requirements.txt
+└── src
+    ├── agents.py
+    ├── constants.py
+    ├── __init__.py
+    ├── __pycache__
+    ├── tasks.py
+    ├── tools.py
+    └── utils.py
+```
 
 ## Features
 
