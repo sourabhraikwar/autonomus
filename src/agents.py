@@ -15,14 +15,17 @@ load_dotenv()
 os.environ["OPENAI_API_KEY"] = "NA"
 OLLAMA_MODEL_NAME = os.environ.get("OLLAMA_MODEL_NAME")
 OPENAI_API_BASE = os.environ.get("OPENAI_API_BASE")
+CURRENT_LLM = os.environ.get('CURRENT_LLM')
+
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
-GROQ_MODEL = "mixtral-8x7b-32768"
+GROQ_MODEL = os.environ.get('GROQ_MODEL')
+
 
 class CrewAgent:
     """
     Provides crew agent instance
     """
-    # # Creates llm instance
+    # Creates llm instance
     ollama = ChatOpenAI(
         model=OLLAMA_MODEL_NAME,
         base_url=OPENAI_API_BASE,
@@ -44,11 +47,11 @@ class CrewAgent:
             "role": "{agent_role}",
             "goal": "{agent_goal}",
             "backstory": "{agent_backstory}",
-            "llm": self.groq,
-            "function_calling_llm": self.groq,
             "allow_delegation": False,
             "step_callback": lambda return_values: print(return_values, "\n"),
             "max_iter": 3
         }
         agent_details.update(kwargs)
+        llm = self.groq if CURRENT_LLM == 'GROQ' else self.ollama
+        agent_details.update({"llm": llm, "function_calling_llm": llm})
         return Agent(**agent_details)
